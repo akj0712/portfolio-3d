@@ -36,7 +36,24 @@ const Navbar = () => {
               } hover:text-white text-[18px] font-medium cursor-pointer`}
               onClick={() => setActive(link.title)}
             >
-              <a href={`#${link.id}`}>{link.title}</a>
+              {`${link.id}` === "blog" ? (
+                <a href={`${link.link}`} target="_akj">
+                  {link.title}
+                </a>
+              ) : `${link.id}` === "resume" ? (
+                <a href={`${link.link}`} target="_akj1">
+                  {link.title}
+                </a>
+              ) : (
+                <a href={`#${link.id}`}>{link.title}</a>
+              )}
+              {/* {`${link.id}` === "blog" ? (
+                <a href={`${link.link}`} target="_abhinav">
+                  {link.title}
+                </a>
+              ) : (
+                <a href={`#${link.id}`}>{link.title}</a>
+              )} */}
             </li>
           ))}
         </ul>
