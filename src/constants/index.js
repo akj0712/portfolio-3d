@@ -46,7 +46,7 @@ export const navLinks = [
   {
     id: "resume",
     title: "Resume",
-    link: "https://drive.google.com/file/d/13JqklHpbRhg_wfv9rmQBnom1UJrUAhMp/view?usp=sharing",
+    link: "https://drive.google.com/file/d/15Y-YdcnawmAdf6qZF8OLG40SfQvzKnM-/view?usp=sharing",
   },
   {
     id: "contact",
