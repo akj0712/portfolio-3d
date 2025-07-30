@@ -25,22 +25,31 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const { name, email, message } = form;
+
+    if (!name.trim() || !email.trim() || !message.trim()) {
+      alert("Please fill out all the fields.");
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
     setLoading(true);
-    // EwE5eZD7Pd_cfLeVp
-    // template_zr1762j
-    // service_isryofe
     emailjs
       .send(
-        "service_isryofe",
-        "template_zr1762j",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
           from_name: form.name,
-          to_name: "Abhinav",
           from_email: form.email,
-          to_email: "tg7vl98n@duck.com",
           message: form.message,
         },
-        "EwE5eZD7Pd_cfLeVp"
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(
         () => {
@@ -78,7 +87,7 @@ const Contact = () => {
           className="mt-12 flex flex-col gap-8"
         >
           <label className="flex flex-col">
-            <span className="text-white font=medium mb-4">Your Name</span>
+            <span className="text-white font-medium mb-4">Your Name</span>
             <input
               type="text"
               name="name"
@@ -89,7 +98,7 @@ const Contact = () => {
             />
           </label>
           <label className="flex flex-col">
-            <span className="text-white font=medium mb-4">Your Email</span>
+            <span className="text-white font-medium mb-4">Your Email</span>
             <input
               type="email"
               name="email"
@@ -100,7 +109,7 @@ const Contact = () => {
             />
           </label>
           <label className="flex flex-col">
-            <span className="text-white font=medium mb-4">Your Message</span>
+            <span className="text-white font-medium mb-4">Your Message</span>
             <textarea
               rows="7"
               name="message"
@@ -121,7 +130,7 @@ const Contact = () => {
 
       <motion.div
         variants={slideIn("right", "tween", 0.2, 1)}
-        className="xl:flex-1 xl:h-auto md:h-[550px] h=[350px]"
+        className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
       >
         <EarthCanvas />
       </motion.div>

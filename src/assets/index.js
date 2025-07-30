@@ -25,10 +25,8 @@ import threejs from "./tech/threejs.svg";
 import postman from "./tech/postman.png";
 import cplusplus from "./tech/CPlusPlus.png";
 
-import meta from "./company/meta.png";
-import shopify from "./company/shopify.png";
-import starbucks from "./company/starbucks.png";
-import tesla from "./company/tesla.png";
+import hashedinbydelloite from "./company/hashedinbydelloite.png";
+import motorola from "./company/motorola.png";
 
 import netflix from "./netflix.png";
 import booking from "./booking.png";
@@ -60,10 +58,8 @@ export {
   threejs,
   postman,
   cplusplus,
-  meta,
-  shopify,
-  starbucks,
-  tesla,
+  hashedinbydelloite,
+  motorola,
   netflix,
   booking,
   darksky,
